@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CareConnect NDIS — Empowering Your Journey</title>
+  <meta name="description" content="NDIS support services for Greater Melbourne. Daily living, transport, community participation, and more." />
+
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+
+  <!-- Site Styles -->
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/home.css" />
+
+  <style>
+    #demo-content {
+      display: none;
+    }
+    #participants-content {
+      display: none;
+    }
+    #plan-optimization-content {
+      display: none;
+    }
+    #budget-tracking-content {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ① NAV — rendered by Nav.render() -->
+  <div id="site-nav"></div>
+
+  <!-- ② HOME PAGE SECTIONS -->
+  <div id="hero"></div>
+  <div id="trust-bar"></div>
+  <div id="services"></div>
+  <div id="how-it-works"></div>
+  <div id="why-us"></div>
+  <div id="testimonials"></div>
+  <div id="cta"></div>
+
+  <!-- ③ DEMO PAGE SECTIONS -->
+  <div id="demo-content"></div>
+
+  <!-- ④ PARTICIPANTS PAGE SECTIONS -->
+  <div id="participants-content"></div>
+
+  <!-- ⑤ PLAN OPTIMIZATION PAGE SECTIONS -->
+  <div id="plan-optimization-content"></div>
+
+  <!-- ⑥ BUDGET TRACKING PAGE SECTIONS -->
+  <div id="budget-tracking-content"></div>
+
+  <!-- ⑦ FOOTER — rendered by Footer.render() -->
+  <div id="site-footer"></div>
+
+
+  <!--
+    ┌─────────────────────────────────────────────┐
+    │  SCRIPT LOAD ORDER — do not change this     │
+    │  1. config.js  (data)                       │
+    │  2. components (nav, footer)                │
+    │  3. page scripts (home, demo)               │
+    │  4. router (determines which page to load)  │
+    └─────────────────────────────────────────────┘
+  -->
+  <script src="js/config.js"></script>
+  <script src="js/components/nav.js"></script>
+  <script src="js/components/footer.js"></script>
+  <script src="js/pages/home.js"></script>
+  <script src="js/pages/demo.js"></script>
+  <script src="js/pages/participants.js"></script>
+  <script src="js/pages/plan-optimization.js"></script>
+  <script src="js/pages/budget-tracking.js"></script>
+
+  <script>
+    // Simple Router
+    const currentPath = window.location.pathname;
+    const pageName = currentPath === '/' ? 'index.html' : currentPath;
+
+    // Hide all page sections initially
+    function hideAllPages() {
+      const homeElements = ['hero', 'trust-bar', 'services', 'how-it-works', 'why-us', 'testimonials', 'cta'];
+      homeElements.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = 'none';
+      });
+      const demoEl = document.getElementById('demo-content');
+      if (demoEl) demoEl.style.display = 'none';
+      const participantsEl = document.getElementById('participants-content');
+      if (participantsEl) participantsEl.style.display = 'none';
+      const planOptEl = document.getElementById('plan-optimization-content');
+      if (planOptEl) planOptEl.style.display = 'none';
+      const budgetTrackingEl = document.getElementById('budget-tracking-content');
+      if (budgetTrackingEl) budgetTrackingEl.style.display = 'none';
+    }
+
+    // Show specific page
+    function showPage(pageType) {
+      hideAllPages();
+      if (pageType === 'demo') {
+        document.getElementById('demo-content').style.display = 'block';
+      } else if (pageType === 'participants') {
+        document.getElementById('participants-content').style.display = 'block';
+      } else if (pageType === 'plan-optimization') {
+        document.getElementById('plan-optimization-content').style.display = 'block';
+      } else if (pageType === 'budget-tracking') {
+        document.getElementById('budget-tracking-content').style.display = 'block';
+      } else {
+        const homeElements = ['hero', 'trust-bar', 'services', 'how-it-works', 'why-us', 'testimonials', 'cta'];
+        homeElements.forEach(id => {
+          const el = document.getElementById(id);
+          if (el) el.style.display = 'block';
+        });
+      }
+    }
+
+    // Route to appropriate page
+    if (currentPath.includes('budget-tracking')) {
+      showPage('budget-tracking');
+      Nav.render('service/budget-tracking');
+      BudgetTrackingPage.init();
+    } else if (currentPath === '/service' || currentPath.includes('plan-optimization')) {
+      showPage('plan-optimization');
+      Nav.render('plan-optimization');
+      PlanOptimizationPage.init();
+    } else if (currentPath.includes('participants')) {
+      showPage('participants');
+      Nav.render('participants');
+      ParticipantsPage.init();
+    } else if (currentPath.includes('demo')) {
+      showPage('demo');
+      Nav.render('demo');
+      DemoPage.init();
+    } else {
+      showPage('home');
+      Nav.render('index.html');
+      HomePage.init();
+    }
+
+    Footer.render(pageName);
+  </script>
+
+</body>
+</html>

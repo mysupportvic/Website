@@ -1,0 +1,201 @@
+/* ============================================================
+   GLOBAL STYLES  —  tokens, resets, typography, utilities
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ── Design Tokens ─────────────────────────────────────── */
+:root {
+  --color-teal:        #1D9E75;
+  --color-teal-light:  #E1F5EE;
+  --color-teal-mid:    #9FE1CB;
+  --color-teal-dark:   #085041;
+  --color-teal-darker: #04342C;
+
+  --color-warm-bg:     #F7F4EF;
+  --color-white:       #ffffff;
+  --color-text:        #1a1a1a;
+  --color-muted:       #5a5a5a;
+  
+  --color-custom-gray:  #8c8c8c;
+  --color-custom-green: #60af4a;
+  --color-border:      rgba(0, 0, 0, 0.10);
+  --color-border-dark: rgba(255, 255, 255, 0.15);
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  14px;
+  --radius-xl:  20px;
+
+  --shadow-card: 0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.05);
+  --transition:  0.2s ease;
+
+  --max-width:   1160px;
+  --section-pad: 72px 40px;
+}
+
+/* ── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-text);
+  background: var(--color-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+button { font-family: var(--font-body); cursor: pointer; }
+
+/* ── Layout Utilities ──────────────────────────────────── */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.section       { padding: var(--section-pad); }
+.section--warm { background: var(--color-warm-bg); }
+.section--dark { background: var(--color-teal-dark); }
+
+/* ── Typography ────────────────────────────────────────── */
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--color-custom-green);
+  margin-bottom: 10px;
+}
+.section-label--light { color: var(--color-custom-green); }
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-custom-gray);
+  margin-bottom: 12px;
+}
+.section-title--light { color: var(--color-custom-gray); }
+
+.section-sub {
+  font-size: 15px;
+  color: var(--color-custom-gray);
+  line-height: 1.75;
+  max-width: 560px;
+}
+.section-sub--light { color: var(--color-custom-gray); }
+
+/* ── Buttons ───────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: var(--radius-md);
+  border: none;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.btn--primary {
+  background: var(--color-custom-green);
+  color: var(--color-white);
+}
+.btn--primary:hover { background: #4a8a38; }
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-custom-gray);
+  border: 1.5px solid var(--color-custom-gray);
+}
+.btn--ghost:hover { background: rgba(140, 140, 140, 0.08); }
+
+.btn--outline {
+  background: transparent;
+  color: var(--color-custom-green);
+  border: 1.5px solid var(--color-custom-green);
+}
+.btn--outline:hover { background: rgba(96, 175, 74, 0.08); }
+
+.btn--text {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-custom-green);
+  gap: 5px;
+}
+
+/* ── Cards ─────────────────────────────────────────────── */
+.card {
+  background: var(--color-white);
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  transition: border-color var(--transition);
+}
+.card:hover { border-color: var(--color-custom-green); }
+
+.card--dark {
+  background: rgba(255,255,255,0.08);
+  border: 0.5px solid var(--color-border-dark);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+}
+
+/* ── Icon Box ───────────────────────────────────────────── */
+.icon-box {
+  width: 46px;
+  height: 46px;
+  background: rgba(96, 175, 74, 0.1);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.icon-box i {
+  font-size: 21px;
+  color: var(--color-custom-green);
+}
+
+/* ── Star Rating ────────────────────────────────────────── */
+.stars { display: flex; gap: 3px; }
+.stars i { font-size: 13px; color: #FAC775; }
+
+/* ── NDIS Trust Badge ───────────────────────────────────── */
+.ndis-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(96, 175, 74, 0.08);
+  border: 0.5px solid var(--color-custom-green);
+  padding: 6px 14px;
+  border-radius: var(--radius-xl);
+}
+.ndis-badge span { font-size: 11px; font-weight: 600; color: var(--color-custom-green); }
+.ndis-badge i    { font-size: 13px; color: var(--color-custom-green); }
+
+/* ── Responsive Grid Helpers ────────────────────────────── */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  :root { --section-pad: 52px 24px; }
+  .container { padding: 0 24px; }
+  .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
