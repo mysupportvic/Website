@@ -3,149 +3,397 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CareConnect NDIS — Empowering Your Journey</title>
-  <meta name="description" content="NDIS support services for Greater Melbourne. Daily living, transport, community participation, and more." />
+  <title>My Support - Quality Home Support for Seniors</title>
+  <meta name="description" content="My Support provides reliable, compassionate home support services for seniors. We help with daily living, companionship, and wellness support." />
 
-  <!-- Tabler Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
-
-  <!-- Site Styles -->
-  <link rel="stylesheet" href="css/global.css" />
-  <link rel="stylesheet" href="css/nav.css" />
-  <link rel="stylesheet" href="css/footer.css" />
-  <link rel="stylesheet" href="css/home.css" />
-
-  <style>
-    #demo-content {
-      display: none;
-    }
-    #participants-content {
-      display: none;
-    }
-    #plan-optimization-content {
-      display: none;
-    }
-    #budget-tracking-content {
-      display: none;
-    }
-  </style>
+  <link rel="stylesheet" href="/css/global.css" />
+  <link rel="stylesheet" href="/css/nav.css" />
+  <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/home.css" />
+  <link rel="stylesheet" href="/css/service.css" />
+  <link rel="stylesheet" href="/css/info-pages.css" />
+  <link rel="stylesheet" href="/css/demo-testimonials.css" />
+  <link rel="stylesheet" href="/css/responsive-overrides.css" />
 </head>
+<body data-page="home">
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">My Support<span> NDIS</span></a>
 
-<body>
+      <div class="nav-links" id="nav-links-desktop">
+        <a href="/about.html">About Us</a>
+        <span class="has-dropdown" role="button" tabindex="0" aria-haspopup="true" data-href="/services/">
+          Services <i class="ti ti-chevron-down" aria-hidden="true"></i>
+          <div class="dropdown">
+            <a href="/services/daily-living.html"><i class="ti ti-home" aria-hidden="true"></i>Daily Living Support</a>
+            <a href="/services/community-participation.html"><i class="ti ti-users" aria-hidden="true"></i>Community Participation</a>
+            <a href="/services/transport.html"><i class="ti ti-car" aria-hidden="true"></i>Transport Assistance</a>
+            <a href="/services/domestic-support.html"><i class="ti ti-home-heart" aria-hidden="true"></i>Domestic Support</a>
+            <a href="/services/companionship.html"><i class="ti ti-heart-handshake" aria-hidden="true"></i>Companionship</a>
+            <a href="/services/cultural-support.html"><i class="ti ti-language" aria-hidden="true"></i>Cultural & Language Support</a>
+          </div>
+        </span>
+        <a href="/participants.html">How It Works</a>
+        <a href="/contact.html">Contact</a>
+      </div>
 
-  <!-- ① NAV — rendered by Nav.render() -->
-  <div id="site-nav"></div>
+      <div class="nav-right">
+        <a href="tel:1300000000" class="nav-phone">
+          <i class="ti ti-phone" aria-hidden="true"></i>
+          1300 XXX XXX
+        </a>
+        <a href="/participants.html" class="btn btn--primary">Get Started</a>
+      </div>
 
-  <!-- ② HOME PAGE SECTIONS -->
-  <div id="hero"></div>
-  <div id="trust-bar"></div>
-  <div id="services"></div>
-  <div id="how-it-works"></div>
-  <div id="why-us"></div>
-  <div id="testimonials"></div>
-  <div id="cta"></div>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+        <i class="ti ti-menu-2" aria-hidden="true"></i>
+      </button>
+    </div>
 
-  <!-- ③ DEMO PAGE SECTIONS -->
-  <div id="demo-content"></div>
+    <div class="nav-mobile" id="nav-mobile" role="menu">
+      <a href="/about.html">About Us</a>
+      <a href="/services/daily-living.html">Daily Living Support</a>
+      <a href="/services/community-participation.html">Community Participation</a>
+      <a href="/services/transport.html">Transport Assistance</a>
+      <a href="/services/domestic-support.html">Domestic Support</a>
+      <a href="/services/companionship.html">Companionship</a>
+      <a href="/services/cultural-support.html">Cultural & Language Support</a>
+      <a href="/participants.html">How It Works</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/participants.html" class="nav-mobile-cta">Get Started</a>
+      <a href="tel:1300000000" style="color:var(--color-teal); font-weight:600;">
+        <i class="ti ti-phone" aria-hidden="true"></i> 1300 XXX XXX
+      </a>
+    </div>
+  </nav>
 
-  <!-- ④ PARTICIPANTS PAGE SECTIONS -->
-  <div id="participants-content"></div>
+  <div id="home-content">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <span class="hero-pill"><i class="ti ti-check" aria-hidden="true"></i> QUALITY HOME SUPPORT FOR SENIORS</span>
+          <h1>Stay Independent, <em>With Support You Can Trust</em></h1>
+          <p class="hero-desc">We provide compassionate, reliable home support for seniors. From daily living assistance to companionship, we help you live independently in your own home.</p>
+          <div class="hero-btns">
+            <a href="/participants.html" class="btn btn--primary">Learn How We Can Help</a>
+            <a href="tel:1300000000" class="btn btn--outline">Call 1300 XXX XXX</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Your Trusted Support Partner</h3>
+          <div class="hero-bullet"><div class="hero-bullet-dot"></div><p>Vetted Carers</p></div>
+          <div class="hero-bullet"><div class="hero-bullet-dot"></div><p>Compassionate Care</p></div>
+          <div class="hero-bullet"><div class="hero-bullet-dot"></div><p>Reliable Service</p></div>
+          <div class="hero-bullet"><div class="hero-bullet-dot"></div><p>Fair Pricing</p></div>
+          <div class="hero-bullet"><div class="hero-bullet-dot"></div><p>Friendly Support</p></div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-num">500+</div>
+              <div class="hero-stat-lbl">Seniors Supported</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num">98%</div>
+              <div class="hero-stat-lbl">Client Satisfaction</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- ⑤ PLAN OPTIMIZATION PAGE SECTIONS -->
-  <div id="plan-optimization-content"></div>
+    <!-- TRUST BAR -->
+    <section class="trust-bar">
+      <div class="trust-bar-inner">
+        <div class="trust-item"><i class="ti ti-shield-check" aria-hidden="true"></i> Vetted Carers</div>
+        <div class="trust-divider"></div>
+        <div class="trust-item"><i class="ti ti-heart" aria-hidden="true"></i> Compassionate Care</div>
+        <div class="trust-divider"></div>
+        <div class="trust-item"><i class="ti ti-clock" aria-hidden="true"></i> Reliable Service</div>
+        <div class="trust-divider"></div>
+        <div class="trust-item"><i class="ti ti-cash" aria-hidden="true"></i> Fair Pricing</div>
+        <div class="trust-divider"></div>
+        <div class="trust-item"><i class="ti ti-headphones" aria-hidden="true"></i> Friendly Support</div>
+      </div>
+    </section>
 
-  <!-- ⑥ BUDGET TRACKING PAGE SECTIONS -->
-  <div id="budget-tracking-content"></div>
+    <!-- SERVICES -->
+    <section class="services-section">
+      <div class="services-header">
+        <div>
+          <span class="section-label">OUR SERVICES</span>
+          <h2 class="section-title">Support That Fits Your Life</h2>
+          <p class="section-sub">We offer a comprehensive range of home support services tailored to help you stay independent and well.</p>
+        </div>
+        <a href="/services/" style="white-space: nowrap; margin-left: 20px;">View all services →</a>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="ti ti-home" aria-hidden="true"></i>
+          <h4>Daily Living Support</h4>
+          <p>Help with housework, meal prep, shopping, and personal care tasks.</p>
+          <a href="/services/daily-living.html" class="svc-link">Learn more <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="service-card">
+          <i class="ti ti-users" aria-hidden="true"></i>
+          <h4>Community Participation</h4>
+          <p>Support to attend activities, programs, and social events in your community.</p>
+          <a href="/services/community-participation.html" class="svc-link">Learn more <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="service-card">
+          <i class="ti ti-car" aria-hidden="true"></i>
+          <h4>Transport Assistance</h4>
+          <p>Reliable transport help for appointments, shopping, and community access.</p>
+          <a href="/services/transport.html" class="svc-link">Learn more <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
 
-  <!-- ⑦ FOOTER — rendered by Footer.render() -->
-  <div id="site-footer"></div>
+    <!-- HOW IT WORKS -->
+    <section class="how-section">
+      <div class="how-inner">
+        <div class="how-header">
+          <span class="section-label">OUR PROCESS</span>
+          <h2 class="section-title">Simple, Caring Support From Start to Finish</h2>
+          <p class="section-sub">A simple, caring process designed to meet your needs and keep your family informed every step of the way.</p>
+        </div>
+        <div class="steps-track">
+          <div class="step">
+            <div class="step-circle active">1</div>
+            <h4>Get in Touch</h4>
+            <p>Call us or submit an enquiry about your care needs and preferences.</p>
+          </div>
+          <div class="step">
+            <div class="step-circle">2</div>
+            <h4>Initial Assessment</h4>
+            <p>We visit to understand your situation and discuss what support would help.</p>
+          </div>
+          <div class="step">
+            <div class="step-circle">3</div>
+            <h4>Personalized Care Plan</h4>
+            <p>We create a customized schedule and match you with the right carer.</p>
+          </div>
+          <div class="step">
+            <div class="step-circle">4</div>
+            <h4>Ongoing Support</h4>
+            <p>Regular visits begin. We adjust the plan based on your evolving needs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- WHY US -->
+    <section class="why-section">
+      <div class="why-inner">
+        <div>
+          <span class="section-label">WHY CHOOSE US</span>
+          <h2 class="section-title">Quality Support From People Who Care</h2>
+          <div class="why-grid">
+            <div class="why-item">
+              <div class="icon-box"><i class="ti ti-shield-check" aria-hidden="true"></i></div>
+              <div>
+                <h4>Vetted & Trained Carers</h4>
+                <p>All carers are checked, insured, and trained in aged care best practices.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="icon-box"><i class="ti ti-heart" aria-hidden="true"></i></div>
+              <div>
+                <h4>Compassionate Service</h4>
+                <p>We treat you with respect and dignity. Your wellbeing comes first.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="icon-box"><i class="ti ti-clock" aria-hidden="true"></i></div>
+              <div>
+                <h4>Flexible & Reliable</h4>
+                <p>Available 7 days a week. Consistent carers you can trust.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="icon-box"><i class="ti ti-cash" aria-hidden="true"></i></div>
+              <div>
+                <h4>Transparent Pricing</h4>
+                <p>No surprises. Clear rates upfront. Pay only for what you need.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!--
-    ┌─────────────────────────────────────────────┐
-    │  SCRIPT LOAD ORDER — do not change this     │
-    │  1. config.js  (data)                       │
-    │  2. components (nav, footer)                │
-    │  3. page scripts (home, demo)               │
-    │  4. router (determines which page to load)  │
-    └─────────────────────────────────────────────┘
-  -->
-  <script src="js/config.js"></script>
-  <script src="js/components/nav.js"></script>
-  <script src="js/components/footer.js"></script>
-  <script src="js/pages/home.js"></script>
-  <script src="js/pages/demo.js"></script>
-  <script src="js/pages/participants.js"></script>
-  <script src="js/pages/plan-optimization.js"></script>
-  <script src="js/pages/budget-tracking.js"></script>
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section">
+      <div class="testimonials-inner">
+        <span class="section-label">TESTIMONIALS</span>
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="testimonials-grid">
+          <div class="card tcard">
+            <div class="stars">
+              <i class="ti ti-star-filled" aria-hidden="true"></i>
+              <i class="ti ti-star-filled" aria-hidden="true"></i>
+              <i class="ti ti-star-filled" aria-hidden="true"></i>
+              <i class="ti ti-star-filled" aria-hidden="true"></i>
+              <i class="ti ti-star-filled" aria-hidden="true"></i>
+            </div>
+            <p>"My Support carers are wonderful. They help with housework and we have great conversations. I feel safe and supported every week."</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar">MA</div>
+              <div>
+                <div class="tcard-name">Margaret A.</div>
+                <div class="tcard-role">Senior, Melbourne</div>
+              </div>
+            </div>
+          </div>
+          <div class="card tcard">
+            <div class="stars">
+              <i class="ti ti-star-filled" aria-hidden="true"></i>
+              <i class="ti ti-star-filled" aria-hidden="true"></i>
+              <i class="ti ti-star-filled" aria-hidden="true"></i>
+              <i class="ti ti-star-filled" aria-hidden="true"></i>
+              <i class="ti ti-star-filled" aria-hidden="true"></i>
+            </div>
+            <p>"Reliable, friendly, and professional. They treat me with respect. I wouldn't manage without their help."</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar">JL</div>
+              <div>
+                <div class="tcard-name">John L.</div>
+                <div class="tcard-role">Senior, Suburb</div>
+              </div>
+            </div>
+          </div>
+          <div class="card tcard">
+            <div class="stars">
+              <i class="ti ti-star-filled" aria-hidden="true"></i>
+              <i class="ti ti-star-filled" aria-hidden="true"></i>
+              <i class="ti ti-star-filled" aria-hidden="true"></i>
+              <i class="ti ti-star-filled" aria-hidden="true"></i>
+              <i class="ti ti-star-filled" aria-hidden="true"></i>
+            </div>
+            <p>"The scheduling is flexible and the carers are always on time. My family feels reassured knowing I have good support."</p>
+            <div class="tcard-author">
+              <div class="tcard-avatar">RM</div>
+              <div>
+                <div class="tcard-name">Rose M.</div>
+                <div class="tcard-role">Senior, Regional Victoria</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="cta-inner">
+        <h2 class="section-title">Ready for Support You Can Trust?</h2>
+        <p class="section-sub">Book a free consultation to discuss your needs and find the right support plan for you.</p>
+        <form class="cta-form" id="cta-form">
+          <input type="text" name="name" placeholder="Your name" required />
+          <input type="tel" name="phone" placeholder="Your phone number" required />
+          <button type="submit" class="btn btn--primary">Get in Touch</button>
+        </form>
+        <p class="cta-note">We respect your privacy. <strong>We'll call you</strong> at a time that suits you.</p>
+      </div>
+    </section>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="footer-brand-logo">My Support<span> NDIS</span></a>
+          <p>Supporting NDIS participants across Greater Melbourne & Regional Victoria with person-centred, reliable services.</p>
+          <div class="ndis-badge" style="margin-top:16px;">
+            <i class="ti ti-shield-check" aria-hidden="true"></i>
+            <span>NDIS Support Services</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="/services/daily-living.html">Daily Living Support</a></li>
+            <li><a href="/services/community-participation.html">Community Participation</a></li>
+            <li><a href="/services/transport.html">Transport Assistance</a></li>
+            <li><a href="/services/domestic-support.html">Domestic Support</a></li>
+            <li><a href="/services/companionship.html">Companionship</a></li>
+            <li><a href="/services/cultural-support.html">Cultural & Language Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>For Clients</h5>
+          <ul>
+            <li><a href="/participants.html#how-it-works">How It Works</a></li>
+            <li><a href="/participants.html#process">Our Process</a></li>
+            <li><a href="/participants.html#pricing">Pricing</a></li>
+            <li><a href="/participants.html#faq">FAQs</a></li>
+            <li><a href="/participants.html#resources">Resources</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="/about.html">About Us</a></li>
+            <li><a href="/about.html#team">Our Team</a></li>
+            <li><a href="/careers.html">Careers</a></li>
+            <li><a href="/privacy.html">Privacy Policy</a></li>
+            <li><a href="/contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 My Support. All rights reserved. ABN: XX XXX XXX XXX</p>
+        <p>123 Care Lane, Melbourne VIC 3000</p>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    // Simple Router
-    const currentPath = window.location.pathname;
-    const pageName = currentPath === '/' ? 'index.html' : currentPath;
-
-    // Hide all page sections initially
-    function hideAllPages() {
-      const homeElements = ['hero', 'trust-bar', 'services', 'how-it-works', 'why-us', 'testimonials', 'cta'];
-      homeElements.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.style.display = 'none';
-      });
-      const demoEl = document.getElementById('demo-content');
-      if (demoEl) demoEl.style.display = 'none';
-      const participantsEl = document.getElementById('participants-content');
-      if (participantsEl) participantsEl.style.display = 'none';
-      const planOptEl = document.getElementById('plan-optimization-content');
-      if (planOptEl) planOptEl.style.display = 'none';
-      const budgetTrackingEl = document.getElementById('budget-tracking-content');
-      if (budgetTrackingEl) budgetTrackingEl.style.display = 'none';
-    }
-
-    // Show specific page
-    function showPage(pageType) {
-      hideAllPages();
-      if (pageType === 'demo') {
-        document.getElementById('demo-content').style.display = 'block';
-      } else if (pageType === 'participants') {
-        document.getElementById('participants-content').style.display = 'block';
-      } else if (pageType === 'plan-optimization') {
-        document.getElementById('plan-optimization-content').style.display = 'block';
-      } else if (pageType === 'budget-tracking') {
-        document.getElementById('budget-tracking-content').style.display = 'block';
-      } else {
-        const homeElements = ['hero', 'trust-bar', 'services', 'how-it-works', 'why-us', 'testimonials', 'cta'];
-        homeElements.forEach(id => {
-          const el = document.getElementById(id);
-          if (el) el.style.display = 'block';
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobile menu toggle
+      const hamburger = document.getElementById('nav-hamburger');
+      const navMobile = document.getElementById('nav-mobile');
+      if (hamburger && navMobile) {
+        hamburger.addEventListener('click', () => {
+          navMobile.classList.toggle('open');
+          hamburger.setAttribute('aria-expanded', navMobile.classList.contains('open'));
         });
       }
-    }
 
-    // Route to appropriate page
-    if (currentPath.includes('budget-tracking')) {
-      showPage('budget-tracking');
-      Nav.render('service/budget-tracking');
-      BudgetTrackingPage.init();
-    } else if (currentPath === '/service' || currentPath.includes('plan-optimization')) {
-      showPage('plan-optimization');
-      Nav.render('plan-optimization');
-      PlanOptimizationPage.init();
-    } else if (currentPath.includes('participants')) {
-      showPage('participants');
-      Nav.render('participants');
-      ParticipantsPage.init();
-    } else if (currentPath.includes('demo')) {
-      showPage('demo');
-      Nav.render('demo');
-      DemoPage.init();
-    } else {
-      showPage('home');
-      Nav.render('index.html');
-      HomePage.init();
-    }
+      // Dropdown handling
+      const dropdowns = document.querySelectorAll('.has-dropdown');
+      dropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', (e) => {
+          dropdown.classList.toggle('open');
+        });
+        dropdown.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            dropdown.classList.toggle('open');
+          }
+        });
+      });
 
-    Footer.render(pageName);
+      // CTA form
+      const ctaForm = document.getElementById('cta-form');
+      if (ctaForm) {
+        ctaForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const name = this.name.value.trim();
+          const phone = this.phone.value.trim();
+          if (!name || !phone) {
+            alert('Please fill in both fields.');
+            return;
+          }
+          alert('Thanks ' + name + '! We\'ll call you at ' + phone + ' soon.');
+          this.reset();
+        });
+      }
+    });
   </script>
-
 </body>
 </html>
