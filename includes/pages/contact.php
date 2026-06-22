@@ -24,7 +24,7 @@
         <article class="info-card">
           <h2>Enquiry Form</h2>
           <p>Tell us a little about your support needs and we will contact you within one business day.</p>
-          <form class="contact-form" id="contact-form">
+          <form class="contact-form" id="contact-form" action="https://formspree.io/f/xykqyypk" method="POST">
             <label for="full-name">Full name</label>
             <input id="full-name" name="name" type="text" required />
 
@@ -69,20 +69,4 @@
   </div>
 </div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('contact-form');
-    if (!form) return;
-
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const name = form.name.value.trim();
-      if (!name) {
-        alert('Please enter your name before submitting.');
-        return;
-      }
-      alert('Thank you ' + name + '. We received your enquiry and will contact you shortly.');
-      form.reset();
-    });
-  });
-</script>
+<!-- Formspree will auto-redirect on success. No custom JS needed. -->

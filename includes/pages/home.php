@@ -187,7 +187,7 @@
       <p class="section-sub" style="margin:0 auto;">
         Leave your name and number and one of our friendly team members will be in touch within one business day.
       </p>
-      <form class="cta-form" id="cta-form" novalidate>
+      <form class="cta-form" action="https://formspree.io/f/xykqyypk" method="POST">
         <input class="cta-input" type="text" name="name" placeholder="Your name" required aria-label="Your name" />
         <input class="cta-input" type="tel" name="phone" placeholder="Phone number" required aria-label="Phone number" />
         <button type="submit" class="btn btn--primary">Request a call</button>
@@ -198,17 +198,3 @@
     </div>
   </section>
 </div>
-
-<script>
-document.getElementById('cta-form').addEventListener('submit', function (e) {
-  e.preventDefault();
-  const name = this.name.value.trim();
-  const phone = this.phone.value.trim();
-  if (!name || !phone) {
-    alert('Please fill in both fields.');
-    return;
-  }
-  alert('Thanks ' + name + '! We\'ll call you at ' + phone + ' soon.');
-  this.reset();
-});
-</script>

@@ -52,25 +52,5 @@ $currentPage = $currentPage ?? 'home';
     const ROUTES = <?= json_encode($routes, JSON_UNESCAPED_SLASHES) ?>;
   </script>
   <script src="/js/components/nav-interactions.js"></script>
-
-  <script>
-    // Handle CTA form on home page
-    document.addEventListener('DOMContentLoaded', () => {
-      const ctaForm = document.getElementById('cta-form');
-      if (ctaForm) {
-        ctaForm.addEventListener('submit', function (e) {
-          e.preventDefault();
-          const name = this.name.value.trim();
-          const phone = this.phone.value.trim();
-          if (!name || !phone) {
-            alert('Please fill in both fields.');
-            return;
-          }
-          alert('Thanks ' + name + '! We\'ll call you at ' + phone + ' soon.');
-          this.reset();
-        });
-      }
-    });
-  </script>
 </body>
 </html>
