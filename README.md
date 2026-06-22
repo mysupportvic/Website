@@ -1,10 +1,12 @@
-# My Support NDIS Website (PHP)
+# My Support NDIS Website (PHP → Static HTML)
 
 Maintainable PHP website for an NDIS startup provider, with shared templates, centralized content config, clean routes, and responsive layouts for desktop, tablet, and phone.
+The project now includes a static export step so it can be deployed on GitHub Pages.
 
 ## Current Status
 
 - Server-rendered PHP pages are active and routed through shared templates.
+- Static HTML pages can be generated from PHP entry points via `scripts/export-static.php`.
 - Core content and route definitions are centralized in `includes/site.php`.
 - Navigation, footer, and service dropdown are generated from config.
 - Responsive behavior is implemented across shared CSS and page-specific styles.
@@ -16,7 +18,25 @@ Maintainable PHP website for an NDIS startup provider, with shared templates, ce
 - PHP 8+
 - Node.js (optional, only for `npm` scripts)
 
-### Start PHP server (recommended)
+### Generate static HTML (for GitHub Pages)
+
+```bash
+npm run build:static
+```
+
+or directly:
+
+```bash
+php scripts/export-static.php
+```
+
+### Preview static site
+
+```bash
+npm run dev
+```
+
+### Start PHP server (optional, template development)
 
 ```bash
 npm run dev:php
@@ -45,9 +65,9 @@ npm.cmd run dev:php
 - `/` Home
 - `/about` About Us
 - `/contact` Contact
-- `/demo.php` Demo / approach
-- `/participants.php` Participants
-- `/budget-tracking.php` Testimonials page
+- `/demo.html` Demo / approach
+- `/participants.html` Participants
+- `/budget-tracking.html` Testimonials page
 
 ### Services
 
@@ -148,13 +168,18 @@ To enable real submissions, connect either:
 
 ## Deployment
 
-This project is PHP-based. Deploy to any host that supports PHP:
+For GitHub Pages deployment:
 
-- cPanel/shared hosting (Apache/Nginx + PHP)
-- VPS (Nginx/Apache + PHP-FPM)
-- Managed PHP hosting platforms
+1. Generate static files:
 
-No build step is required.
+	```bash
+	npm run build:static
+	```
+
+2. Commit and push generated HTML files (`index.html`, `about/index.html`, `services/**/index.html`, etc.) and `.nojekyll`.
+3. In GitHub repository settings, enable Pages and deploy from the branch/folder you committed.
+
+Because links and asset paths are rewritten as relative paths during export, the site works on both custom domains and `username.github.io/repository-name/` project URLs.
 
 ## Dependencies
 

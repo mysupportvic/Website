@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "serve -l 5500 -s .",
     "dev:open": "serve -l 5500 -s . -n",
-    "dev:php": "php -S localhost:8000"
+    "dev:php": "php -S localhost:8000",
+    "build:static": "php scripts/export-static.php"
   },
   "devDependencies": {
     "serve": "^14.2.4"
