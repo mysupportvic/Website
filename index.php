@@ -1,6 +1,6 @@
 <?php
 
 $currentPage = 'home';
-$pageTitle = 'CareConnect NDIS - Empowering Your Journey';
+$pageTitle = 'MY SUPPORT VIC - Culturally Responsive NDIS Support';
 
 require __DIR__ . '/includes/page-shell.php';

@@ -7,8 +7,8 @@
     <!-- HERO SECTION -->
     <section style="background: linear-gradient(135deg, #1D9E75 0%, #085041 100%); color: white; padding: 100px 20px; text-align: center; position: relative; overflow: hidden;">
       <div style="max-width: 800px; margin: 0 auto; position: relative; z-index: 1;">
-        <h1 style="font-size: 48px; margin: 0 0 20px; font-weight: 700; line-height: 1.2;">Getting Quality Home Support is Simple</h1>
-        <p style="font-size: 18px; margin: 0; opacity: 0.95; line-height: 1.6;">We make it easy to access the care you need. Here's how it works.</p>
+        <h1 style="font-size: 48px; margin: 0 0 20px; font-weight: 700; line-height: 1.2;">Getting Started With MY SUPPORT VIC</h1>
+        <p style="font-size: 18px; margin: 0; opacity: 0.95; line-height: 1.6;">Whether you are new to the NDIS or changing providers, we make the process clear and supportive.</p>
       </div>
     </section>
 
@@ -16,46 +16,56 @@
     <section style="max-width: 1100px; margin: 80px auto; padding: 0 20px;">
       <div style="text-align: center; margin-bottom: 60px;">
         <h2 style="font-size: 36px; color: var(--color-custom-gray); margin-bottom: 15px;">Who We Support</h2>
-        <p style="font-size: 16px; color: var(--color-muted); line-height: 1.6;">We provide home support services for seniors in <?= e($site['region']) ?></p>
+        <p style="font-size: 16px; color: var(--color-muted); line-height: 1.6;">We support NDIS participants and families across <?= e($site['region']) ?></p>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
         <div style="background: linear-gradient(135deg, #E1F5EE 0%, #F0F8F6 100%); padding: 30px; border-radius: 12px; border-left: 4px solid #1D9E75;">
           <div style="font-size: 28px; color: #1D9E75; margin-bottom: 12px;">👥</div>
-          <h3 style="color: var(--color-custom-gray); margin: 0 0 10px; font-size: 16px;">Seniors Aged 65+</h3>
-          <p style="color: var(--color-muted); margin: 0; line-height: 1.6;">Or younger individuals with mobility or health support needs.</p>
+          <h3 style="color: var(--color-custom-gray); margin: 0 0 10px; font-size: 16px;">New Participants</h3>
+          <p style="color: var(--color-muted); margin: 0; line-height: 1.6;">People new to the NDIS who need clear guidance on plans, services, and next steps.</p>
         </div>
 
         <div style="background: linear-gradient(135deg, #E1F5EE 0%, #F0F8F6 100%); padding: 30px; border-radius: 12px; border-left: 4px solid #1D9E75;">
           <div style="font-size: 28px; color: #1D9E75; margin-bottom: 12px;">🏠</div>
-          <h3 style="color: var(--color-custom-gray); margin: 0 0 10px; font-size: 16px;">Living Independently</h3>
-          <p style="color: var(--color-muted); margin: 0; line-height: 1.6;">People who want to stay home but need support with daily tasks.</p>
+          <h3 style="color: var(--color-custom-gray); margin: 0 0 10px; font-size: 16px;">Existing Participants</h3>
+          <p style="color: var(--color-muted); margin: 0; line-height: 1.6;">Participants looking for a reliable provider with stronger communication and cultural understanding.</p>
         </div>
 
         <div style="background: linear-gradient(135deg, #E1F5EE 0%, #F0F8F6 100%); padding: 30px; border-radius: 12px; border-left: 4px solid #1D9E75;">
           <div style="font-size: 28px; color: #1D9E75; margin-bottom: 12px;">💪</div>
-          <h3 style="color: var(--color-custom-gray); margin: 0 0 10px; font-size: 16px;">Need Practical Help</h3>
-          <p style="color: var(--color-muted); margin: 0; line-height: 1.6;">Seeking assistance with household tasks, companionship, or wellness support.</p>
+          <h3 style="color: var(--color-custom-gray); margin: 0 0 10px; font-size: 16px;">Self and Plan Managed</h3>
+          <p style="color: var(--color-muted); margin: 0; line-height: 1.6;">Participants who want flexible support with clear invoicing and straightforward service arrangements.</p>
         </div>
       </div>
     </section>
 
-    <!-- SERVICES SECTION -->
+    <!-- PAYMENTS SECTION -->
     <section style="background: var(--color-warm-bg); padding: 80px 20px; margin: 60px 0;">
       <div style="max-width: 1100px; margin: 0 auto;">
         <div style="text-align: center; margin-bottom: 60px;">
-          <h2 style="font-size: 36px; color: var(--color-custom-gray); margin-bottom: 15px;">Services We Provide</h2>
-          <p style="font-size: 16px; color: var(--color-muted); line-height: 1.6;">Comprehensive home support tailored to your unique needs</p>
+          <h2 style="font-size: 36px; color: var(--color-custom-gray); margin-bottom: 15px;">Payments and How It Works</h2>
+          <p style="font-size: 16px; color: var(--color-muted); line-height: 1.6;">Simple and transparent payment options for self-managed and plan-managed participants</p>
         </div>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-          <?php foreach (array_slice($site['services'], 0, 3) as $service): ?>
-            <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: all 0.3s ease; border-top: 4px solid #1D9E75; text-align: center;">
-              <i class="ti <?= e($service['icon']) ?>" style="font-size: 36px; color: #1D9E75; margin-bottom: 20px; display: block;"></i>
-              <h3 style="color: var(--color-custom-gray); margin: 0 0 12px; font-size: 18px; font-weight: 600;"><?= e($service['title']) ?></h3>
-              <p style="color: var(--color-muted); margin: 0; line-height: 1.6;"><?= e($service['short']) ?></p>
-            </div>
-          <?php endforeach; ?>
+          <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: all 0.3s ease; border-top: 4px solid #1D9E75; text-align: center;">
+            <i class="ti ti-user-check" style="font-size: 36px; color: #1D9E75; margin-bottom: 20px; display: block;"></i>
+            <h3 style="color: var(--color-custom-gray); margin: 0 0 12px; font-size: 18px; font-weight: 600;">Self-Managed Participants</h3>
+            <p style="color: var(--color-muted); margin: 0; line-height: 1.6;">After services are delivered, we provide an invoice directly to you for claiming through your NDIS funding.</p>
+          </div>
+
+          <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: all 0.3s ease; border-top: 4px solid #1D9E75; text-align: center;">
+            <i class="ti ti-file-invoice" style="font-size: 36px; color: #1D9E75; margin-bottom: 20px; display: block;"></i>
+            <h3 style="color: var(--color-custom-gray); margin: 0 0 12px; font-size: 18px; font-weight: 600;">Plan-Managed Participants</h3>
+            <p style="color: var(--color-muted); margin: 0; line-height: 1.6;">We send invoices directly to your Plan Manager for processing, making the payment process simple and convenient.</p>
+          </div>
+
+          <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: all 0.3s ease; border-top: 4px solid #1D9E75; text-align: center;">
+            <i class="ti ti-message-question" style="font-size: 36px; color: #1D9E75; margin-bottom: 20px; display: block;"></i>
+            <h3 style="color: var(--color-custom-gray); margin: 0 0 12px; font-size: 18px; font-weight: 600;">Need Help?</h3>
+            <p style="color: var(--color-muted); margin: 0; line-height: 1.6;">Our team can explain service arrangements, invoicing, and how supports fit your NDIS plan.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -64,7 +74,7 @@
     <section style="max-width: 1100px; margin: 80px auto; padding: 0 20px;">
       <div style="text-align: center; margin-bottom: 60px;">
         <h2 style="font-size: 36px; color: var(--color-custom-gray); margin-bottom: 15px;">Getting Started is Easy</h2>
-        <p style="font-size: 16px; color: var(--color-muted); line-height: 1.6;">Four simple steps to get the care support you need</p>
+        <p style="font-size: 16px; color: var(--color-muted); line-height: 1.6;">Four simple steps to begin support with confidence</p>
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px;">
@@ -90,57 +100,57 @@
       <div style="max-width: 800px; margin: 0 auto;">
         <div style="text-align: center; margin-bottom: 60px;">
           <h2 style="font-size: 36px; color: var(--color-custom-gray); margin-bottom: 15px;">Frequently Asked Questions</h2>
-          <p style="font-size: 16px; color: var(--color-muted);">Find answers to common questions about our services</p>
+          <p style="font-size: 16px; color: var(--color-muted);">Find answers to common questions from participants and families</p>
         </div>
 
         <div style="display: flex; flex-direction: column; gap: 20px;">
           <div style="background: white; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0; transition: all 0.3s ease;">
             <div style="padding: 20px; background: #f9f9f9; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none;" onclick="this.parentElement.querySelector('[data-answer]').style.display = this.parentElement.querySelector('[data-answer]').style.display === 'none' ? 'block' : 'none'; this.parentElement.classList.toggle('active');">
-              <h4 style="margin: 0; color: var(--color-custom-gray); font-weight: 600;">How much does home support cost?</h4>
+              <h4 style="margin: 0; color: var(--color-custom-gray); font-weight: 600;">Can you help if I am new to the NDIS?</h4>
               <i class="ti ti-chevron-down" style="color: #1D9E75; transition: transform 0.3s;"></i>
             </div>
             <div data-answer style="padding: 20px; display: none; color: var(--color-muted); line-height: 1.8;">
-              Pricing depends on the services you need and how often. We provide a quote during your assessment. Our rates are transparent with no hidden fees.
+              Yes. We help new participants understand plans, funding options, and available supports so the process feels clearer and less overwhelming.
             </div>
           </div>
 
           <div style="background: white; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0; transition: all 0.3s ease;">
             <div style="padding: 20px; background: #f9f9f9; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none;" onclick="this.parentElement.querySelector('[data-answer]').style.display = this.parentElement.querySelector('[data-answer]').style.display === 'none' ? 'block' : 'none'; this.parentElement.classList.toggle('active');">
-              <h4 style="margin: 0; color: var(--color-custom-gray); font-weight: 600;">Are your carers trained and vetted?</h4>
+              <h4 style="margin: 0; color: var(--color-custom-gray); font-weight: 600;">Do you support self-managed and plan-managed participants?</h4>
               <i class="ti ti-chevron-down" style="color: #1D9E75; transition: transform 0.3s;"></i>
             </div>
             <div data-answer style="padding: 20px; display: none; color: var(--color-muted); line-height: 1.8;">
-              Yes! All carers are carefully selected, background checked, insured, and trained in aged care and safety practices.
+              Yes. We support both self-managed and plan-managed participants and provide clear invoicing to keep things simple.
             </div>
           </div>
 
           <div style="background: white; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0; transition: all 0.3s ease;">
             <div style="padding: 20px; background: #f9f9f9; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none;" onclick="this.parentElement.querySelector('[data-answer]').style.display = this.parentElement.querySelector('[data-answer]').style.display === 'none' ? 'block' : 'none'; this.parentElement.classList.toggle('active');">
-              <h4 style="margin: 0; color: var(--color-custom-gray); font-weight: 600;">Can I choose my carer?</h4>
+              <h4 style="margin: 0; color: var(--color-custom-gray); font-weight: 600;">Can I change from my current provider?</h4>
               <i class="ti ti-chevron-down" style="color: #1D9E75; transition: transform 0.3s;"></i>
             </div>
             <div data-answer style="padding: 20px; display: none; color: var(--color-muted); line-height: 1.8;">
-              Absolutely. We match you with carers based on your preferences. You can meet them before deciding.
+              Yes. Changing providers is often straightforward, and our team can guide you through each step.
             </div>
           </div>
 
           <div style="background: white; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0; transition: all 0.3s ease;">
             <div style="padding: 20px; background: #f9f9f9; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none;" onclick="this.parentElement.querySelector('[data-answer]').style.display = this.parentElement.querySelector('[data-answer]').style.display === 'none' ? 'block' : 'none'; this.parentElement.classList.toggle('active');">
-              <h4 style="margin: 0; color: var(--color-custom-gray); font-weight: 600;">What if I need to change my support schedule?</h4>
+              <h4 style="margin: 0; color: var(--color-custom-gray); font-weight: 600;">Do you provide culturally responsive support?</h4>
               <i class="ti ti-chevron-down" style="color: #1D9E75; transition: transform 0.3s;"></i>
             </div>
             <div data-answer style="padding: 20px; display: none; color: var(--color-muted); line-height: 1.8;">
-              Your schedule is flexible. Let us know if your needs change and we'll adjust your plan accordingly.
+              Yes. We provide support that respects language, culture, family values, and individual preferences.
             </div>
           </div>
 
           <div style="background: white; border-radius: 8px; overflow: hidden; border: 1px solid #e0e0e0; transition: all 0.3s ease;">
             <div style="padding: 20px; background: #f9f9f9; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none;" onclick="this.parentElement.querySelector('[data-answer]').style.display = this.parentElement.querySelector('[data-answer]').style.display === 'none' ? 'block' : 'none'; this.parentElement.classList.toggle('active');">
-              <h4 style="margin: 0; color: var(--color-custom-gray); font-weight: 600;">Do you service my area?</h4>
+              <h4 style="margin: 0; color: var(--color-custom-gray); font-weight: 600;">How do I get started?</h4>
               <i class="ti ti-chevron-down" style="color: #1D9E75; transition: transform 0.3s;"></i>
             </div>
             <div data-answer style="padding: 20px; display: none; color: var(--color-muted); line-height: 1.8;">
-              We service <?= e($site['region']) ?>. Call us on <?= e($site['phone']) ?> to confirm your location is covered.
+              Contact our team by phone, email, or website. We will discuss your goals and guide you through the next steps.
             </div>
           </div>
         </div>
@@ -150,9 +160,9 @@
     <!-- CTA SECTION -->
     <section style="background: linear-gradient(135deg, #1D9E75 0%, #085041 100%); color: white; padding: 100px 20px; text-align: center; position: relative; overflow: hidden;">
       <div style="max-width: 700px; margin: 0 auto; position: relative; z-index: 1;">
-        <h2 style="font-size: 40px; margin: 0 0 20px; font-weight: 700; line-height: 1.2;">Ready to Get Quality Home Support?</h2>
-        <p style="font-size: 18px; margin: 0 0 30px; opacity: 0.95; line-height: 1.6;">Contact us today for a free, no-obligation assessment. We'll discuss your needs and create a care plan tailored for you.</p>
-        <a href="<?= e($routes['contact']) ?>" style="display: inline-block; background: white; color: #1D9E75; padding: 14px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">Get Started Today</a>
+        <h2 style="font-size: 40px; margin: 0 0 20px; font-weight: 700; line-height: 1.2;">Ready to Talk With MY SUPPORT VIC?</h2>
+        <p style="font-size: 18px; margin: 0 0 30px; opacity: 0.95; line-height: 1.6;">Our team is here to answer your questions and help you choose support that fits your goals.</p>
+        <a href="<?= e($routes['contact']) ?>" style="display: inline-block; background: white; color: #1D9E75; padding: 14px 40px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">Contact Our Team</a>
         <div style="margin-top: 20px; font-size: 16px; opacity: 0.9;">
           or call us at <strong><?= e($site['phone']) ?></strong>
         </div>

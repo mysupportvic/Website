@@ -10,11 +10,11 @@
       <div class="hero-content">
         <div class="hero-pill">
           <i class="ti ti-heart" aria-hidden="true"></i>
-          Quality Home Support for Seniors
+          Culturally Responsive NDIS Support
         </div>
-        <h1>Stay Independent,<br><em>With Support You Can Trust</em></h1>
+        <h1>Feel Understood,<br><em>Supported Every Step</em></h1>
         <p class="hero-desc">
-          We provide compassionate, reliable home support for seniors. From daily living assistance to companionship, we help you live independently in your own home.
+          MY SUPPORT VIC provides person-centred support that respects language, culture, and individual goals. We help participants and families navigate the NDIS with confidence.
         </p>
         <div class="hero-btns">
           <a href="<?= e($routes['participants']) ?>" class="btn btn--primary">
@@ -101,7 +101,7 @@
       <div class="how-header">
         <div class="section-label">How It Works</div>
         <h2 id="how-title" class="section-title">Getting started is simple</h2>
-        <p class="section-sub">From your first call to your first support session — we make the NDIS process clear and stress-free.</p>
+        <p class="section-sub">From first contact to ongoing support, we keep communication clear and support tailored to your goals.</p>
       </div>
       <div class="steps-track" role="list">
         <?php foreach ($site['steps'] as $i => $step): ?>
@@ -122,10 +122,10 @@
     <div class="why-inner">
       <div>
         <div class="section-label">Why Choose Us</div>
-        <h2 id="why-title" class="section-title">Care that puts <em style="font-style:italic;">you</em> first</h2>
+        <h2 id="why-title" class="section-title">Support that puts <em style="font-style:italic;">you</em> first</h2>
         <p class="section-sub" style="margin-top:10px;">
-          We're not just a service provider — we're partners in your goals.
-          Our team genuinely cares about your progress and wellbeing.
+          We are more than a service provider.
+          We are a trusted partner focused on respect, communication, and meaningful outcomes.
         </p>
         <a href="<?= e($routes['about']) ?>" class="btn btn--outline" style="margin-top:28px;">
           Meet Our Team
@@ -183,9 +183,9 @@
   <section class="cta-section" aria-labelledby="cta-title">
     <div class="cta-inner">
       <div class="section-label">Get In Touch</div>
-      <h2 id="cta-title" class="section-title">Ready to start your NDIS journey with us?</h2>
+      <h2 id="cta-title" class="section-title">Ready to start your NDIS journey with MY SUPPORT VIC?</h2>
       <p class="section-sub" style="margin:0 auto;">
-        Leave your name and number and one of our friendly team members will be in touch within one business day.
+        Leave your details and our team will contact you to discuss your goals and support needs.
       </p>
       <form class="cta-form" action="https://formspree.io/f/xykqyypk" method="POST">
         <input class="cta-input" type="text" name="name" placeholder="Your name" required aria-label="Your name" />

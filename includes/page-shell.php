@@ -2,7 +2,7 @@
 
 require __DIR__ . '/site.php';
 
-$pageTitle = $pageTitle ?? 'CareConnect NDIS';
+$pageTitle = $pageTitle ?? 'MY SUPPORT VIC';
 $pageDescription = $pageDescription ?? $site['description'];
 $currentPage = $currentPage ?? 'home';
 ?>

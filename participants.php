@@ -1,6 +1,6 @@
 <?php
 
 $currentPage = 'participants';
-$pageTitle = 'CareConnect NDIS - For Participants';
+$pageTitle = 'MY SUPPORT VIC - Participant Information';
 
 require __DIR__ . '/includes/page-shell.php';
