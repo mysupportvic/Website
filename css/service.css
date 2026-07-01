@@ -201,6 +201,10 @@
   gap: 14px;
 }
 
+.po-savings-grid > .po-savings-card:only-child {
+  grid-column: 1 / -1;
+}
+
 .po-savings-card {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.25);
