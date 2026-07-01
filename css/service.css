@@ -265,3 +265,674 @@
     margin-top: 18px;
   }
 }
+
+/* Daily living page refinements */
+.daily-living-page .po-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.2), transparent 35%),
+    radial-gradient(circle at 88% 82%, rgba(255, 255, 255, 0.14), transparent 32%),
+    linear-gradient(135deg, #1d9e75 0%, #085041 100%);
+}
+
+.daily-living-page .po-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.daily-living-page .dl-eyebrow {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.daily-living-page .po-hero h1 {
+  margin-bottom: 10px;
+}
+
+.daily-living-page .po-hero p {
+  font-size: clamp(17px, 2vw, 20px);
+}
+
+.daily-living-page .dl-quick-points {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.daily-living-page .dl-quick-points span {
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.daily-living-page .po-problem-solution {
+  gap: 22px;
+}
+
+.daily-living-page .po-problem-solution.dl-single-panel {
+  grid-template-columns: 1fr;
+}
+
+.daily-living-page .po-problem-solution > div {
+  box-shadow: 0 14px 34px rgba(7, 70, 57, 0.08);
+}
+
+.daily-living-page .po-problem-solution .dl-support-box {
+  position: relative;
+  overflow: hidden;
+  padding: 32px;
+  border: 1px solid rgba(29, 158, 117, 0.28);
+  background: linear-gradient(180deg, #f5fffb 0%, #ffffff 36%);
+  box-shadow: 0 16px 36px rgba(9, 92, 72, 0.14);
+}
+
+.daily-living-page .po-problem-solution .dl-support-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #1d9e75 0%, #0b6a54 100%);
+}
+
+.daily-living-page .dl-support-head {
+  margin-bottom: 10px;
+}
+
+.daily-living-page .dl-support-kicker {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0d6f58;
+}
+
+.daily-living-page .dl-support-box h2 {
+  margin: 0;
+  font-size: clamp(28px, 3.1vw, 36px);
+}
+
+.daily-living-page .po-problem-solution p {
+  margin: 0;
+  line-height: 1.8;
+  color: var(--color-custom-gray);
+}
+
+.daily-living-page .po-problem-solution p + p {
+  margin-top: 12px;
+}
+
+.daily-living-page .dl-service-list {
+  list-style: none;
+  margin-top: 14px;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 14px;
+}
+
+.daily-living-page .dl-service-list li {
+  position: relative;
+  padding: 11px 12px 11px 36px;
+  border-radius: 12px;
+  border: 1px solid rgba(29, 158, 117, 0.2);
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(10, 89, 70, 0.07);
+  line-height: 1.55;
+}
+
+.daily-living-page .dl-service-list li::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-custom-green);
+  box-shadow: 0 0 0 4px rgba(29, 158, 117, 0.16);
+}
+
+.daily-living-page .dl-support-note {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-left: 4px solid #1d9e75;
+  border-radius: 8px;
+  background: rgba(29, 158, 117, 0.08);
+}
+
+.daily-living-page .po-savings {
+  margin-top: 56px;
+}
+
+.daily-living-page .po-savings-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.daily-living-page .po-savings-card {
+  text-align: left;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.daily-living-page .po-savings-icon {
+  font-size: 34px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.daily-living-page .po-savings-card h4 {
+  margin: 0 0 10px;
+  color: #fff;
+}
+
+.daily-living-page .po-cta {
+  margin-top: 52px;
+  margin-bottom: 78px;
+}
+
+.daily-living-page .po-cta p {
+  font-size: 17px;
+}
+
+@media (max-width: 980px) {
+  .daily-living-page .dl-service-list {
+    grid-template-columns: 1fr;
+  }
+
+  .daily-living-page .po-savings-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .daily-living-page .po-hero-content > div {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .daily-living-page .po-hero-content > div .btn {
+    width: 100%;
+  }
+
+  .daily-living-page .dl-quick-points {
+    justify-content: flex-start;
+  }
+
+  .daily-living-page .po-problem-solution > div,
+  .daily-living-page .po-savings-card {
+    padding: 20px;
+  }
+
+  .daily-living-page .po-problem-solution .dl-support-box {
+    padding: 22px;
+  }
+
+  .daily-living-page .po-savings-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Community participation page refinements */
+.community-participation-page .po-problem-solution {
+  gap: 22px;
+}
+
+.community-participation-page .po-problem-solution.dl-single-panel {
+  grid-template-columns: 1fr;
+}
+
+.community-participation-page .po-problem-solution .dl-support-box {
+  position: relative;
+  overflow: hidden;
+  padding: 32px;
+  border: 1px solid rgba(29, 158, 117, 0.28);
+  background: linear-gradient(180deg, #f5fffb 0%, #ffffff 36%);
+  box-shadow: 0 16px 36px rgba(9, 92, 72, 0.14);
+}
+
+.community-participation-page .po-problem-solution .dl-support-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #1d9e75 0%, #0b6a54 100%);
+}
+
+.community-participation-page .dl-support-head {
+  margin-bottom: 10px;
+}
+
+.community-participation-page .dl-support-kicker {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0d6f58;
+}
+
+.community-participation-page .dl-support-box h2 {
+  margin: 0;
+  font-size: clamp(28px, 3.1vw, 36px);
+}
+
+.community-participation-page .dl-service-list {
+  list-style: none;
+  margin-top: 14px;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 14px;
+}
+
+.community-participation-page .dl-service-list li {
+  position: relative;
+  padding: 11px 12px 11px 36px;
+  border-radius: 12px;
+  border: 1px solid rgba(29, 158, 117, 0.2);
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(10, 89, 70, 0.07);
+  line-height: 1.55;
+}
+
+.community-participation-page .dl-service-list li::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-custom-green);
+  box-shadow: 0 0 0 4px rgba(29, 158, 117, 0.16);
+}
+
+.community-participation-page .dl-support-note {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-left: 4px solid #1d9e75;
+  border-radius: 8px;
+  background: rgba(29, 158, 117, 0.08);
+}
+
+.community-participation-page .po-savings-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.community-participation-page .po-savings-card {
+  text-align: left;
+  padding: 26px;
+}
+
+.community-participation-page .po-savings-icon {
+  font-size: 34px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.community-participation-page .po-savings-card h4 {
+  margin: 0 0 10px;
+  color: #fff;
+}
+
+@media (max-width: 980px) {
+  .community-participation-page .dl-service-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .community-participation-page .po-hero-content > div {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .community-participation-page .po-hero-content > div .btn {
+    width: 100%;
+  }
+
+  .community-participation-page .po-problem-solution .dl-support-box,
+  .community-participation-page .po-savings-card {
+    padding: 20px;
+  }
+
+  .community-participation-page .po-savings-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Transport assistance page refinements */
+.transport-assistance-page .po-problem-solution {
+  gap: 22px;
+}
+
+.transport-assistance-page .po-problem-solution.dl-single-panel {
+  grid-template-columns: 1fr;
+}
+
+.transport-assistance-page .po-problem-solution .dl-support-box {
+  position: relative;
+  overflow: hidden;
+  padding: 32px;
+  border: 1px solid rgba(29, 158, 117, 0.28);
+  background: linear-gradient(180deg, #f5fffb 0%, #ffffff 36%);
+  box-shadow: 0 16px 36px rgba(9, 92, 72, 0.14);
+}
+
+.transport-assistance-page .po-problem-solution .dl-support-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #1d9e75 0%, #0b6a54 100%);
+}
+
+.transport-assistance-page .dl-support-head {
+  margin-bottom: 10px;
+}
+
+.transport-assistance-page .dl-support-kicker {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0d6f58;
+}
+
+.transport-assistance-page .dl-support-box h2 {
+  margin: 0;
+  font-size: clamp(28px, 3.1vw, 36px);
+}
+
+.transport-assistance-page .dl-service-list {
+  list-style: none;
+  margin-top: 14px;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 14px;
+}
+
+.transport-assistance-page .dl-service-list li {
+  position: relative;
+  padding: 11px 12px 11px 36px;
+  border-radius: 12px;
+  border: 1px solid rgba(29, 158, 117, 0.2);
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(10, 89, 70, 0.07);
+  line-height: 1.55;
+}
+
+.transport-assistance-page .dl-service-list li::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-custom-green);
+  box-shadow: 0 0 0 4px rgba(29, 158, 117, 0.16);
+}
+
+.transport-assistance-page .dl-support-note {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-left: 4px solid #1d9e75;
+  border-radius: 8px;
+  background: rgba(29, 158, 117, 0.08);
+}
+
+.transport-assistance-page .po-savings-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.transport-assistance-page .po-savings-card {
+  text-align: left;
+  padding: 26px;
+}
+
+.transport-assistance-page .po-savings-icon {
+  font-size: 34px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.transport-assistance-page .po-savings-card h4 {
+  margin: 0 0 10px;
+  color: #fff;
+}
+
+@media (max-width: 980px) {
+  .transport-assistance-page .dl-service-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .transport-assistance-page .po-hero-content > div {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .transport-assistance-page .po-hero-content > div .btn {
+    width: 100%;
+  }
+
+  .transport-assistance-page .po-problem-solution .dl-support-box,
+  .transport-assistance-page .po-savings-card {
+    padding: 20px;
+  }
+
+  .transport-assistance-page .po-savings-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Companionship, cultural, and domestic page refinements */
+.companionship-page .po-problem-solution,
+.cultural-support-page .po-problem-solution,
+.domestic-support-page .po-problem-solution {
+  gap: 22px;
+}
+
+.companionship-page .po-problem-solution.dl-single-panel,
+.cultural-support-page .po-problem-solution.dl-single-panel,
+.domestic-support-page .po-problem-solution.dl-single-panel {
+  grid-template-columns: 1fr;
+}
+
+.companionship-page .po-problem-solution .dl-support-box,
+.cultural-support-page .po-problem-solution .dl-support-box,
+.domestic-support-page .po-problem-solution .dl-support-box {
+  position: relative;
+  overflow: hidden;
+  padding: 32px;
+  border: 1px solid rgba(29, 158, 117, 0.28);
+  background: linear-gradient(180deg, #f5fffb 0%, #ffffff 36%);
+  box-shadow: 0 16px 36px rgba(9, 92, 72, 0.14);
+}
+
+.companionship-page .po-problem-solution .dl-support-box::before,
+.cultural-support-page .po-problem-solution .dl-support-box::before,
+.domestic-support-page .po-problem-solution .dl-support-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #1d9e75 0%, #0b6a54 100%);
+}
+
+.companionship-page .dl-support-head,
+.cultural-support-page .dl-support-head,
+.domestic-support-page .dl-support-head {
+  margin-bottom: 10px;
+}
+
+.companionship-page .dl-support-kicker,
+.cultural-support-page .dl-support-kicker,
+.domestic-support-page .dl-support-kicker {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0d6f58;
+}
+
+.companionship-page .dl-support-box h2,
+.cultural-support-page .dl-support-box h2,
+.domestic-support-page .dl-support-box h2 {
+  margin: 0;
+  font-size: clamp(28px, 3.1vw, 36px);
+}
+
+.companionship-page .dl-service-list,
+.cultural-support-page .dl-service-list,
+.domestic-support-page .dl-service-list {
+  list-style: none;
+  margin-top: 14px;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 14px;
+}
+
+.companionship-page .dl-service-list li,
+.cultural-support-page .dl-service-list li,
+.domestic-support-page .dl-service-list li {
+  position: relative;
+  padding: 11px 12px 11px 36px;
+  border-radius: 12px;
+  border: 1px solid rgba(29, 158, 117, 0.2);
+  background: #ffffff;
+  box-shadow: 0 8px 18px rgba(10, 89, 70, 0.07);
+  line-height: 1.55;
+}
+
+.companionship-page .dl-service-list li::before,
+.cultural-support-page .dl-service-list li::before,
+.domestic-support-page .dl-service-list li::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-custom-green);
+  box-shadow: 0 0 0 4px rgba(29, 158, 117, 0.16);
+}
+
+.companionship-page .dl-support-note,
+.cultural-support-page .dl-support-note,
+.domestic-support-page .dl-support-note {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-left: 4px solid #1d9e75;
+  border-radius: 8px;
+  background: rgba(29, 158, 117, 0.08);
+}
+
+.companionship-page .po-savings-grid,
+.cultural-support-page .po-savings-grid,
+.domestic-support-page .po-savings-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.companionship-page .po-savings-card,
+.cultural-support-page .po-savings-card,
+.domestic-support-page .po-savings-card {
+  text-align: left;
+  padding: 26px;
+}
+
+.companionship-page .po-savings-icon,
+.cultural-support-page .po-savings-icon,
+.domestic-support-page .po-savings-icon {
+  font-size: 34px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.companionship-page .po-savings-card h4,
+.cultural-support-page .po-savings-card h4,
+.domestic-support-page .po-savings-card h4 {
+  margin: 0 0 10px;
+  color: #fff;
+}
+
+@media (max-width: 980px) {
+  .companionship-page .dl-service-list,
+  .cultural-support-page .dl-service-list,
+  .domestic-support-page .dl-service-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .companionship-page .po-hero-content > div,
+  .cultural-support-page .po-hero-content > div,
+  .domestic-support-page .po-hero-content > div {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .companionship-page .po-hero-content > div .btn,
+  .cultural-support-page .po-hero-content > div .btn,
+  .domestic-support-page .po-hero-content > div .btn {
+    width: 100%;
+  }
+
+  .companionship-page .po-problem-solution .dl-support-box,
+  .cultural-support-page .po-problem-solution .dl-support-box,
+  .domestic-support-page .po-problem-solution .dl-support-box,
+  .companionship-page .po-savings-card,
+  .cultural-support-page .po-savings-card,
+  .domestic-support-page .po-savings-card {
+    padding: 20px;
+  }
+
+  .companionship-page .po-savings-grid,
+  .cultural-support-page .po-savings-grid,
+  .domestic-support-page .po-savings-grid {
+    grid-template-columns: 1fr;
+  }
+}

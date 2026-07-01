@@ -203,3 +203,127 @@
     border-radius: 14px;
   }
 }
+
+/* About page refinements */
+.about-page .info-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 10% 18%, rgba(255, 255, 255, 0.2), transparent 34%),
+    radial-gradient(circle at 92% 82%, rgba(255, 255, 255, 0.14), transparent 36%),
+    linear-gradient(135deg, #1d9e75 0%, #085041 100%);
+}
+
+.about-page .info-hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.about-page .info-eyebrow {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  letter-spacing: 0.06em;
+}
+
+.about-page .info-hero h1 {
+  max-width: 900px;
+}
+
+.about-page .about-hero-points {
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.about-page .about-hero-points span {
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.about-page .about-story-card {
+  border-color: rgba(29, 158, 117, 0.24);
+  box-shadow: 0 14px 34px rgba(10, 81, 65, 0.08);
+}
+
+.about-page .about-story-card p {
+  color: var(--color-custom-gray);
+  line-height: 1.86;
+}
+
+.about-page .info-heading {
+  margin-bottom: 18px;
+}
+
+.about-page .info-grid {
+  gap: 20px;
+}
+
+.about-page .info-card {
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+.about-page .info-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px rgba(10, 74, 60, 0.12);
+  border-color: rgba(29, 158, 117, 0.34);
+}
+
+.about-page #team .info-card,
+.about-page #why-choose .info-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-page #team .info-card::before,
+.about-page #why-choose .info-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #1d9e75 0%, #0a6a53 100%);
+  opacity: 0.88;
+}
+
+.about-page .info-band {
+  border: 1px solid rgba(29, 158, 117, 0.2);
+  background: linear-gradient(180deg, #f7fdfb 0%, #fdfefe 100%);
+}
+
+.about-page .info-cta {
+  margin-top: 62px;
+}
+
+.about-page .info-cta p {
+  font-size: 17px;
+}
+
+@media (max-width: 920px) {
+  .about-page .info-card:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .about-page .about-hero-points {
+    gap: 8px;
+  }
+
+  .about-page .about-hero-points span {
+    font-size: 12px;
+  }
+
+  .about-page .about-story-card p {
+    line-height: 1.78;
+  }
+}
