@@ -1,24 +1,88 @@
 <?php
 
-$routes = [
-    'home' => '/',
-    'about' => '/about',
-    'contact' => '/contact',
-    'demo' => '/demo.php',
-    'participants' => '/participants.php',
-    'service' => '/services',
-    'budgetTracking' => '/budget-tracking.php',
-    'servicesDailyLiving' => '/services/daily-living',
-    'servicesCommunityParticipation' => '/services/community-participation',
-    'servicesTransport' => '/services/transport',
-    'servicesDomesticSupport' => '/services/domestic-support',
-    'servicesCompanionship' => '/services/companionship',
-    'servicesCulturalSupport' => '/services/cultural-support',
+function buildRoutes(string $prefix): array
+{
+    return [
+        'home' => $prefix,
+        'about' => $prefix . '/about',
+        'contact' => $prefix . '/contact',
+        'demo' => $prefix . '/demo',
+        'participants' => $prefix . '/participants',
+        'participantsNew' => $prefix . '/participants/new-participants',
+        'participantsExisting' => $prefix . '/participants/existing-participants',
+        'participantsSelfManaged' => $prefix . '/participants/self-managed-participants',
+        'participantsPlanManaged' => $prefix . '/participants/plan-managed-participants',
+        'participantsPayments' => $prefix . '/participants/payments-how-it-works',
+        'resourcesGettingStarted' => $prefix . '/resources/getting-started-guide',
+        'resourcesUnderstandingPlan' => $prefix . '/resources/understanding-your-ndis-plan',
+        'resourcesCompareManaged' => $prefix . '/resources/self-managed-vs-plan-managed',
+        'resourcesFaq' => $prefix . '/resources/faqs',
+        'resourcesRights' => $prefix . '/resources/participant-rights',
+        'resourcesVietnamese' => $prefix . '/resources/vietnamese-resources',
+        'service' => $prefix . '/services',
+        'budgetTracking' => $prefix . '/budget-tracking',
+        'servicesDailyLiving' => $prefix . '/services/daily-living',
+        'servicesCommunityParticipation' => $prefix . '/services/community-participation',
+        'servicesTransport' => $prefix . '/services/transport',
+        'servicesDomesticSupport' => $prefix . '/services/domestic-support',
+        'servicesCompanionship' => $prefix . '/services/companionship',
+        'servicesCulturalSupport' => $prefix . '/services/cultural-support',
+    ];
+}
+
+function buildNeutralRoutes(): array
+{
+    return [
+        'home' => '/',
+        'about' => '/about',
+        'contact' => '/contact',
+        'demo' => '/demo.html',
+        'participants' => '/participants.html',
+        'participantsNew' => '/participants/new-participants',
+        'participantsExisting' => '/participants/existing-participants',
+        'participantsSelfManaged' => '/participants/self-managed-participants',
+        'participantsPlanManaged' => '/participants/plan-managed-participants',
+        'participantsPayments' => '/participants/payments-how-it-works',
+        'resourcesGettingStarted' => '/resources/getting-started-guide',
+        'resourcesUnderstandingPlan' => '/resources/understanding-your-ndis-plan',
+        'resourcesCompareManaged' => '/resources/self-managed-vs-plan-managed',
+        'resourcesFaq' => '/resources/faqs',
+        'resourcesRights' => '/resources/participant-rights',
+        'resourcesVietnamese' => '/resources/vietnamese-resources',
+        'service' => '/services',
+        'budgetTracking' => '/budget-tracking.html',
+        'servicesDailyLiving' => '/services/daily-living',
+        'servicesCommunityParticipation' => '/services/community-participation',
+        'servicesTransport' => '/services/transport',
+        'servicesDomesticSupport' => '/services/domestic-support',
+        'servicesCompanionship' => '/services/companionship',
+        'servicesCulturalSupport' => '/services/cultural-support',
+    ];
+}
+
+$siteLanguage = strtolower((string) (getenv('SITE_LANGUAGE') ?: ($siteLanguage ?? 'neutral')));
+if (!in_array($siteLanguage, ['neutral', 'en', 'vn'], true)) {
+    $siteLanguage = 'neutral';
+}
+
+$activeLanguage = $siteLanguage === 'vn' ? 'vn' : 'en';
+$htmlLang = $activeLanguage === 'vn' ? 'vi' : 'en';
+$isLanguageLanding = $siteLanguage === 'neutral';
+$neutralRoutes = buildNeutralRoutes();
+$languageRoutes = [
+    'en' => buildRoutes('/en'),
+    'vn' => buildRoutes('/vn'),
 ];
+
+$routes = $isLanguageLanding ? $neutralRoutes : $languageRoutes[$activeLanguage];
 
 $site = [
     'name' => 'MY SUPPORT VIC',
     'tagline' => 'Culturally Responsive NDIS Support',
+    'activeLanguage' => $activeLanguage,
+    'htmlLang' => $htmlLang,
+    'isLanguageLanding' => $isLanguageLanding,
+    'languageRoutes' => $languageRoutes,
     'phone' => '1300 XXX XXX',
     'email' => 'hello@mysupport.com.au',
     'abn' => 'XX XXX XXX XXX',
@@ -28,8 +92,44 @@ $site = [
     'description' => 'MY SUPPORT VIC provides culturally responsive and person-centred NDIS support, with clear communication and practical guidance for participants and families.',
     'nav' => [
         ['label' => 'About Us', 'href' => $routes['about']],
-        ['label' => 'Services', 'href' => $routes['service'], 'dropdown' => true],
-        ['label' => 'How It Works', 'href' => $routes['participants']],
+        [
+            'label' => 'Services',
+            'href' => $routes['service'],
+            'dropdownItems' => [
+                ['icon' => 'ti-home', 'label' => 'Daily Living Support', 'href' => $routes['servicesDailyLiving']],
+                ['icon' => 'ti-users', 'label' => 'Community Participation', 'href' => $routes['servicesCommunityParticipation']],
+                ['icon' => 'ti-car', 'label' => 'Transport Assistance', 'href' => $routes['servicesTransport']],
+                ['icon' => 'ti-home-heart', 'label' => 'Domestic Support', 'href' => $routes['servicesDomesticSupport']],
+                ['icon' => 'ti-heart-handshake', 'label' => 'Companionship', 'href' => $routes['servicesCompanionship']],
+                ['icon' => 'ti-language', 'label' => 'Cultural & Language Support', 'href' => $routes['servicesCulturalSupport']],
+            ],
+            'activePages' => ['service', 'budget-tracking'],
+        ],
+        [
+            'label' => 'Participants',
+            'href' => $routes['participants'],
+            'dropdownItems' => [
+                ['icon' => 'ti-user-plus', 'label' => 'New Participants', 'href' => $routes['participantsNew']],
+                ['icon' => 'ti-users-group', 'label' => 'Existing Participants', 'href' => $routes['participantsExisting']],
+                ['icon' => 'ti-user-check', 'label' => 'Self-Managed Participants', 'href' => $routes['participantsSelfManaged']],
+                ['icon' => 'ti-file-invoice', 'label' => 'Plan-Managed Participants', 'href' => $routes['participantsPlanManaged']],
+                ['icon' => 'ti-credit-card', 'label' => 'Payments & How It Works', 'href' => $routes['participantsPayments']],
+            ],
+            'activePages' => ['participants'],
+        ],
+        [
+            'label' => 'Resources',
+            'href' => $routes['resourcesGettingStarted'],
+            'dropdownItems' => [
+                ['icon' => 'ti-book', 'label' => 'Getting Started Guide', 'href' => $routes['resourcesGettingStarted']],
+                ['icon' => 'ti-clipboard-text', 'label' => 'Understanding Your NDIS Plan', 'href' => $routes['resourcesUnderstandingPlan']],
+                ['icon' => 'ti-arrows-left-right', 'label' => 'Self-Managed vs Plan-Managed', 'href' => $routes['resourcesCompareManaged']],
+                ['icon' => 'ti-help-circle', 'label' => 'FAQs', 'href' => $routes['resourcesFaq']],
+                ['icon' => 'ti-scale', 'label' => 'Participant Rights', 'href' => $routes['resourcesRights']],
+                ['icon' => 'ti-language', 'label' => 'Vietnamese Resources', 'href' => $routes['resourcesVietnamese']],
+            ],
+            'activePages' => ['resources'],
+        ],
         ['label' => 'Contact', 'href' => $routes['contact']],
     ],
     'services' => [

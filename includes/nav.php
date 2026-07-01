@@ -1,15 +1,5 @@
 <?php
 
-$servicesDropdown = '';
-foreach ($site['services'] as $service) {
-    $servicesDropdown .= sprintf(
-        '<a href="%s"><i class="ti %s" aria-hidden="true"></i>%s</a>',
-        e($service['href']),
-        e($service['icon']),
-        e($service['title'])
-    );
-}
-
 $desktopLinks = '';
 $pageToRoute = [
   'home' => $routes['home'],
@@ -17,24 +7,35 @@ $pageToRoute = [
   'contact' => $routes['contact'],
   'demo' => $routes['demo'],
   'participants' => $routes['participants'],
+  'resources' => $routes['resourcesGettingStarted'],
   'service' => $routes['service'],
   'budget-tracking' => $routes['budgetTracking'],
 ];
 
 foreach ($site['nav'] as $item) {
-    $isDropdown = !empty($item['dropdown']);
+  $isDropdown = !empty($item['dropdownItems']);
     $isActive = $isDropdown
-        ? in_array($currentPage, ['service', 'budget-tracking'], true)
+    ? in_array($currentPage, $item['activePages'] ?? [], true)
     : (($pageToRoute[$currentPage] ?? null) === $item['href']);
     $activeClass = $isActive ? 'active' : '';
 
     if ($isDropdown) {
+    $dropdownLinks = '';
+    foreach ($item['dropdownItems'] as $dropdownItem) {
+      $dropdownLinks .= sprintf(
+        '<a href="%s"><i class="ti %s" aria-hidden="true"></i>%s</a>',
+        e($dropdownItem['href']),
+        e($dropdownItem['icon'] ?? 'ti-chevron-right'),
+        e($dropdownItem['label'])
+      );
+    }
+
         $desktopLinks .= sprintf(
             '<span class="has-dropdown %s" role="button" tabindex="0" aria-haspopup="true" data-href="%s">%s <i class="ti ti-chevron-down" aria-hidden="true"></i><div class="dropdown">%s</div></span>',
             $activeClass,
             e($item['href']),
             e($item['label']),
-            $servicesDropdown
+      $dropdownLinks
         );
         continue;
     }
@@ -49,9 +50,10 @@ foreach ($site['nav'] as $item) {
 
 $mobileLinks = '';
 foreach ($site['nav'] as $item) {
-    if (!empty($item['dropdown'])) {
-        foreach ($site['services'] as $service) {
-            $mobileLinks .= sprintf('<a href="%s">%s</a>', e($service['href']), e($service['title']));
+  if (!empty($item['dropdownItems'])) {
+    $mobileLinks .= sprintf('<a href="%s">%s</a>', e($item['href']), e($item['label']));
+    foreach ($item['dropdownItems'] as $dropdownItem) {
+      $mobileLinks .= sprintf('<a href="%s" class="nav-mobile-sub-link">%s</a>', e($dropdownItem['href']), e($dropdownItem['label']));
         }
         continue;
     }
@@ -68,10 +70,10 @@ foreach ($site['nav'] as $item) {
     </div>
 
     <div class="nav-right">
-      <a href="tel:<?= e(str_replace(' ', '', $site['phone'])) ?>" class="nav-phone">
-        <i class="ti ti-phone" aria-hidden="true"></i>
-        <?= e($site['phone']) ?>
-      </a>
+      <button type="button" class="nav-language-button" data-language-switcher>
+        <i class="ti ti-world" aria-hidden="true"></i>
+        Language
+      </button>
       <a href="<?= e($routes['participants']) ?>" class="btn btn--primary">Get Started</a>
     </div>
 
@@ -82,9 +84,10 @@ foreach ($site['nav'] as $item) {
 
   <div class="nav-mobile" id="nav-mobile" role="menu">
     <?= $mobileLinks ?>
+    <button type="button" class="nav-mobile-language" data-language-switcher>
+      <i class="ti ti-world" aria-hidden="true"></i>
+      Change language
+    </button>
     <a href="<?= e($routes['participants']) ?>" class="nav-mobile-cta">Get Started</a>
-    <a href="tel:<?= e(str_replace(' ', '', $site['phone'])) ?>" style="color:var(--color-teal); font-weight:600;">
-      <i class="ti ti-phone" aria-hidden="true"></i> <?= e($site['phone']) ?>
-    </a>
   </div>
 </nav>
