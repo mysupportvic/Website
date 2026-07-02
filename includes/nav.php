@@ -51,14 +51,18 @@ foreach ($site['nav'] as $item) {
 $mobileLinks = '';
 foreach ($site['nav'] as $item) {
   if (!empty($item['dropdownItems'])) {
-    $mobileLinks .= sprintf('<a href="%s">%s</a>', e($item['href']), e($item['label']));
+    $mobileLinks .= sprintf(
+      '<div class="nav-mobile-dropdown"><button class="nav-mobile-dropdown-toggle" type="button" aria-expanded="false"><span>%s</span><i class="ti ti-chevron-down" aria-hidden="true"></i></button><div class="nav-mobile-dropdown-menu">',
+      e($item['label'])
+    );
     foreach ($item['dropdownItems'] as $dropdownItem) {
-      $mobileLinks .= sprintf('<a href="%s" class="nav-mobile-sub-link">%s</a>', e($dropdownItem['href']), e($dropdownItem['label']));
-        }
-        continue;
+      $mobileLinks .= sprintf('<a href="%s">%s</a>', e($dropdownItem['href']), e($dropdownItem['label']));
     }
+    $mobileLinks .= '</div></div>';
+    continue;
+  }
 
-    $mobileLinks .= sprintf('<a href="%s">%s</a>', e($item['href']), e($item['label']));
+  $mobileLinks .= sprintf('<a href="%s" class="nav-mobile-link">%s</a>', e($item['href']), e($item['label']));
 }
 ?>
 <nav class="site-nav" role="navigation" aria-label="Main navigation">
