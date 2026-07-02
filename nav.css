@@ -163,10 +163,21 @@
   border-top: 0.5px solid var(--color-border);
   padding: 16px 24px 24px;
   width: 100%;
+  position: fixed;
+  top: 66px;
+  left: 0;
+  right: 0;
   max-height: calc(100vh - 66px);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  z-index: 299;
 }
-.nav-mobile.open { display: flex; }
+.nav-mobile.open { 
+  display: flex;
+}
+html.nav-open {
+  overflow: hidden;
+}
 .nav-mobile a {
   padding: 12px 0;
   font-size: 15px;
